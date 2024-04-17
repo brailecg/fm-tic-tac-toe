@@ -3,31 +3,36 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --background-color: #1a2a33;
+  --menu-background-color: rgba(31, 54, 65, 1);
+  --menu-background-shadow-color: rgba(31, 54, 65, 0.4);
+  --menu-hover-color: rgba(168, 191, 201, 0.05);
+  --primary-green: rgba(49, 195, 189, 1);
+  --hover-green: rgba(101, 233, 228, 1);
+  --background-green: rgba(49, 195, 189, 0.5);
+  --primary-yellow: rgba(242, 177, 55, 1);
+  --hover-yellow: rgba(255, 200, 96, 1);
+  --background-yellow: rgba(242, 177, 55, 0.5);
+  --button-text-color: #333333;
+  --icon-grey: #979797;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  /* typography */
+  --text-grey: #a8bfc9;
+
+  /* width */
+  --desktop-width: 460px;
+  --mobile-width: 327px;
+
+  /* General button */
+  --pb-radius: 15px;
+  /* Desktop button */
+  --desktop-pb-height: 60px;
+  /* Tablet button */
+  --tablet-pb-height: 60px;
+  /* mobile button */
+  --mobile-pb-height: 50px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  background-color: var(--background-color);
 }
