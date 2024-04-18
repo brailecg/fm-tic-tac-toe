@@ -4,9 +4,13 @@
 
 :root {
   --background-color: #1a2a33;
+
   --menu-background-color: rgba(31, 54, 65, 1);
-  --menu-background-shadow-color: rgba(31, 54, 65, 0.4);
+  --menu-background-shadow-color: rgba(16, 33, 42, 1);
   --menu-hover-color: rgba(168, 191, 201, 0.05);
+  --menu-restart-color: rgba(168, 191, 201, 1);
+  --menu-restart-bg-shadow-color: rgba(107, 137, 151, 1);
+
   --primary-green: rgba(49, 195, 189, 1);
   --hover-green: rgba(101, 233, 228, 1);
   --background-green: rgba(49, 195, 189, 0.5);
@@ -21,7 +25,7 @@
 
   /* width */
   --desktop-width: 460px;
-  --mobile-width: 327px;
+  --mobile-width: 95vw;
 
   /* General button */
   --pb-radius: 15px;

@@ -1,10 +1,15 @@
-import React from "react";
-import PrimaryButton from "./utils/PrimaryButton";
+"use client";
+import React, { useState } from "react";
+import { PrimaryButton } from "./utils/Buttons";
 import IconX from "./utils/IconX";
 import IconO from "./utils/IconO";
 import SelectPlayer from "./components/SelectPlayer";
 
 export default function Home() {
+  const [player, setPlayer] = useState("X");
+  const handlerPlayerSelect = (player) => {
+    setPlayer(player);
+  };
   return (
     <main className="flex flex-col min-h-screen justify-center items-center ">
       <div className="px-2 min-w-[var(--mobile-width)] sm:px-0 sm:min-w-[var(--desktop-width)] space-y-10">
@@ -12,10 +17,21 @@ export default function Home() {
           <IconX fillColor="iconGreen" />
           <IconO fillColor="iconYellow" />
         </div>
-        <SelectPlayer />
+        <SelectPlayer
+          handlerPlayerSelect={handlerPlayerSelect}
+          player={player}
+        />
         <div className="space-y-4">
-          <PrimaryButton btnText="NEW GAME (VS CPU)" color="btnYellow" />
-          <PrimaryButton btnText="NEW GAME (VS PLAYER)" color="btnGreen" />
+          <PrimaryButton
+            player={player}
+            btnText="NEW GAME (VS CPU)"
+            color="btnYellow"
+          />
+          <PrimaryButton
+            player={player}
+            btnText="NEW GAME (VS PLAYER)"
+            color="btnGreen"
+          />
         </div>
       </div>
     </main>

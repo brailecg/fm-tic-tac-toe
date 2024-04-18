@@ -1,17 +1,10 @@
-"use client";
 import React, { useState } from "react";
 import IconX from "../utils/IconX";
 import IconO from "../utils/IconO";
 
-const SelectPlayer = () => {
-  const [player, setPlayer] = useState("X");
-
+const SelectPlayer = ({ handlerPlayerSelect, player }) => {
   const hoverColorClasses = {
     unselected: "hover:bg-[var(--menu-hover-color)]",
-  };
-
-  const handlerPlayerSelect = (player) => {
-    setPlayer(player);
   };
 
   return (
