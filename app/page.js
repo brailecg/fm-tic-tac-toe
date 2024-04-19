@@ -11,29 +11,24 @@ export default function Home() {
     setPlayer(player);
   };
   return (
-    <main className="flex flex-col min-h-screen justify-center items-center ">
-      <div className="px-2 min-w-[var(--mobile-width)] sm:px-0 sm:min-w-[var(--desktop-width)] space-y-10">
-        <div className="flex items-center justify-center space-x-1">
-          <IconX fillColor="iconGreen" />
-          <IconO fillColor="iconYellow" />
-        </div>
-        <SelectPlayer
-          handlerPlayerSelect={handlerPlayerSelect}
-          player={player}
-        />
-        <div className="space-y-4">
-          <PrimaryButton
-            player={player}
-            btnText="NEW GAME (VS CPU)"
-            color="btnYellow"
-          />
-          <PrimaryButton
-            player={player}
-            btnText="NEW GAME (VS PLAYER)"
-            color="btnGreen"
-          />
-        </div>
+    <div className="px-2 sm:px-0 min-w-[var(--mobile-width)]  sm:min-w-[var(--desktop-width)] space-y-10">
+      <div className="flex items-center justify-center space-x-1">
+        <IconX fillColor="iconGreen" />
+        <IconO fillColor="iconYellow" />
       </div>
-    </main>
+      <SelectPlayer handlerPlayerSelect={handlerPlayerSelect} player={player} />
+      <div className="space-y-4 sm:space-y-5">
+        <PrimaryButton
+          player={player}
+          btnText="NEW GAME (VS CPU)"
+          color="btnYellow"
+        />
+        <PrimaryButton
+          player={player}
+          btnText="NEW GAME (VS PLAYER)"
+          color="btnGreen"
+        />
+      </div>
+    </div>
   );
 }

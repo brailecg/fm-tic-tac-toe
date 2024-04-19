@@ -5,7 +5,7 @@ import { RestartButton } from "../utils/Buttons";
 
 const BoardHeader = () => {
   return (
-    <div className={`flex justify-around`}>
+    <div className={`flex justify-between`}>
       <div className="flex items-center justify-center space-x-1">
         <IconX fillColor="iconGreen" />
         <IconO fillColor="iconYellow" />
