@@ -3,7 +3,7 @@ import IconO from "../utils/IconO";
 import IconX from "../utils/IconX";
 import { RestartButton } from "../utils/Buttons";
 
-const BoardHeader = () => {
+const BoardHeader = ({ reset }) => {
   return (
     <div className={`flex justify-between`}>
       <div className="flex items-center justify-center space-x-1">
@@ -17,7 +17,7 @@ const BoardHeader = () => {
         </div>
         <div className="absolute top-1 bg-[var(--menu-background-shadow-color)] -z-10 h-9 w-full rounded-lg"></div>
       </div>
-      <RestartButton />
+      <RestartButton reset={reset} />
     </div>
   );
 };

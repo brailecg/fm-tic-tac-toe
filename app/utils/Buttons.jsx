@@ -41,10 +41,14 @@ export const PrimaryButton = ({
   );
 };
 
-export const RestartButton = () => {
+export const RestartButton = ({ reset }) => {
   return (
     <div className="relative">
-      <button className="z-10 bg-[var(--menu-restart-color)] h-10 w-10 flex items-center justify-center rounded-lg">
+      <button
+        onClick={() => {
+          reset();
+        }}
+        className="z-10 bg-[var(--menu-restart-color)] h-10 w-10 flex items-center justify-center rounded-lg">
         <IconRestart />
       </button>
       <div className="h-10 w-10 rounded-lg bg-[var(--menu-restart-bg-shadow-color)] absolute top-1 -z-10"></div>
