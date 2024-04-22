@@ -3,7 +3,7 @@ import { useState } from "react";
 function useTicTacToe() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
-
+  const [winnerTile, setWinnerTile] = useState(null);
   const handleClick = (index) => {
     if (squares[index] || calculateWinner(squares)) {
       return;
@@ -17,10 +17,10 @@ function useTicTacToe() {
     let status;
     if (winner) {
       status = "Winner: " + winner;
+      setWinnerTile(winner);
     } else {
       status = "Next player: " + (!isXNext ? "X" : "O");
     }
-    console.log({ squares, status });
   };
 
   const reset = () => {
@@ -52,7 +52,7 @@ function useTicTacToe() {
     return null;
   };
 
-  return { squares, handleClick, reset };
+  return { squares, handleClick, reset, isXNext, winnerTile, setWinnerTile };
 }
 
 export default useTicTacToe;

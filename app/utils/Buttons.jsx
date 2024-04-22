@@ -4,6 +4,7 @@ import IconRestart from "./IconRestart";
 const colorClasses = {
   btnGreen: "bg-[var(--primary-green)]",
   btnYellow: "bg-[var(--primary-yellow)]",
+  btnRestart: "bg-[var(--menu-restart-color)]",
 };
 
 const hoverColorClasses = {
@@ -14,6 +15,7 @@ const hoverColorClasses = {
 const backgroundColorClasses = {
   btnGreen: "bg-[var(--background-green)]",
   btnYellow: "bg-[var(--background-yellow)]",
+  btnRestart: "bg-[var(--menu-restart-bg-shadow-color)]",
 };
 
 const buttonClass = {
@@ -25,7 +27,7 @@ const buttonClass = {
 export const PrimaryButton = ({
   player = "X",
   btnText = "Click me",
-  color = "blue",
+  color = "btnGreen",
 }) => {
   return (
     <Link
@@ -52,6 +54,26 @@ export const RestartButton = ({ reset }) => {
         <IconRestart />
       </button>
       <div className="h-10 w-10 rounded-lg bg-[var(--menu-restart-bg-shadow-color)] absolute top-1 -z-10"></div>
+    </div>
+  );
+};
+
+export const QuitButton = ({
+  closeModal,
+  color = "btnRestart",
+  text = "QUIT",
+}) => {
+  return (
+    <div className="relative">
+      <button
+        onClick={() => {
+          closeModal();
+        }}
+        className={`z-10 ${colorClasses[color]} h-10 flex items-center justify-center rounded-lg px-2 font-bold`}>
+        {text}
+      </button>
+      <div
+        className={`h-10 w-full rounded-lg ${backgroundColorClasses[color]} absolute top-1 -z-10`}></div>
     </div>
   );
 };
